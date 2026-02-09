@@ -25,4 +25,10 @@ class ProductRepository:
         return db_product
     
     def get_multiple_by_ids(self, product_ids: List[int]) -> List[Product]:
-        return (self.db.query(Product).options(joinedload(Product.category)).filter(Product.id.in_(product_ids).all()))
+        if not product_ids:
+            return[]
+        
+        return (self.db.query(Product)
+        .options(joinedload(Product.category))
+        .filter(Product.id.in_(product_ids))
+        .all())

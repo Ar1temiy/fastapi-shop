@@ -14,7 +14,7 @@ class CartItemUpdate(BaseModel):
     
 class CartItem(BaseModel):
     product_id: int
-    name: int = Field(..., description="Product Name")
+    name: str = Field(..., description="Product Name")
     price: float = Field(..., description="Product price")
     quantity: int = Field(..., description="Quantity in cart")
     subtotal: float = Field(..., description="Total price for this item (item*quantity)")
