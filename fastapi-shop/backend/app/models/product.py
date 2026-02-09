@@ -2,7 +2,7 @@ from datetime import datetime, date
 from typing import List
 from sqlalchemy import DateTime, Float, Integer, String, ForeignKey, Text, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from database import Base
+from ..database import Base
 
 
 class Product(Base):
